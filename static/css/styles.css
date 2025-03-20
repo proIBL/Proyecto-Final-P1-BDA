@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    #outline: 2px solid black;
+}
+
+.sismos-container {
+    display: flex;
+    align-items: center; /* Alinear verticalmente */
+    justify-content: center; /* Centrar en la página */
+    gap: 20px; /* Espacio entre la imagen y el contador */
+    #outline: 2px solid black;
+}
+
+.map-container img {
+    max-width: 100%;
+    height: auto;
+    #outline: 2px solid black;
+}
+
+.parameters-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #outline: 2px solid black;
+}
+
+input[type="number"] {
+    width: 80px;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+}
+
+fieldset {
+    border: none;
+    padding: 10px;
+    width: max-content;
+    text-align: center;
+    margin: auto;
+}
+
+legend {
+    font-weight: bold;
+}
+
+.inputs-container {
+    display: flex;
+    gap: 20px; /* Espacio entre los inputs */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    #outline: 2px solid black;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Pone el label encima del input */
+    align-items: center; /* Centra el contenido dentro del grupo */
+}
+
+input[type="button"] {
+    background: linear-gradient(45deg, #6c757d, #495057);
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+input[type="button"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+input[type="button"]:active {
+    transform: scale(0.98);
+}

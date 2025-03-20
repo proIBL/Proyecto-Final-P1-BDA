@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto Final</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/index.js" defer></script>
+</head>
+<body>
+    <div class="sismos-container">
+        <div class="map-container">
+            <img src="/static/img/mapamx_basic.png" alt="Mapa de México">
+        </div>
+        <div class="parameters-container">
+            <fieldset>
+                <legend>Rango de magnitud</legend>
+                <div class="inputs-container">
+                    <div class="input-group">
+                        <label for="magnitude_start">Inicial:</label>
+                        <input type="number" id="magnitude_start" value="0.3" step="0.1" min="0.3" max="8.2">
+                    </div>
+                    <div class="input-group">
+                        <label for="magnitude_end">Final:</label>
+                        <input type="number" id="magnitude_end" value="0.3" step="0.1" min="0.3" max="8.2">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Rango de profundidad(Km):</legend>
+                <div class="inputs-container">
+                    <div class="input-group">
+                        <label for="depth_start">Inicial:</label>
+                        <input type="number" id="depth_start" value="0" step="1" min="0" max="338">
+                    </div>
+                    <div class="input-group">
+                        <label for="depth_end">Final:</label>
+                        <input type="number" id="depth_end" value="0" step="1" min="0" max="338">
+                    </div>
+                </div>
+            </fieldset>
+            <input type="button" value="Actualizar" onclick="updatemap()">
+        </div>
+    </div>
+</body>
+</html>
