@@ -1,7 +1,25 @@
 function updatemap() {
-    alert("¡Hola! Has hecho clic en el botón.");
-}
 
+  const dataToSend = {
+    magnitude_start: document.getElementById("magnitude_start").value,
+    magnitude_end: document.getElementById("magnitude_end").value,
+    depth_start: document.getElementById("depth_start").value,
+    depth_end: document.getElementById("depth_end").value
+  };
+
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(dataToSend)
+  };
+
+  fetch('/update_image', requestOptions)
+    .then(response => response.blob())
+    .then(blob => {
+        document.getElementById("map").src = URL.createObjectURL(blob);
+    })
+    .catch(error => console.error('Error:', error));
+}
 
 function limitarRango(input, minimo, maximo) {
     let valor = input.value;
