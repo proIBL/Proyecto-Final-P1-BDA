@@ -1,10 +1,10 @@
 function updatemap() {
 
   const dataToSend = {
-    magnitude_start: document.getElementById("magnitude_start").value,
-    magnitude_end: document.getElementById("magnitude_end").value,
-    depth_start: document.getElementById("depth_start").value,
-    depth_end: document.getElementById("depth_end").value
+    magnitude_start: parseFloat(document.getElementById("magnitude_start").value),
+    magnitude_end: parseFloat(document.getElementById("magnitude_end").value),
+    depth_start: parseInt(document.getElementById("depth_start").value),
+    depth_end: parseInt(document.getElementById("depth_end").value)
   };
 
   const requestOptions = {
@@ -21,24 +21,29 @@ function updatemap() {
     .catch(error => console.error('Error:', error));
 }
 
-function limitarRango(input, minimo, maximo) {
-    let valor = input.value;
+function limitarRangoFloat(input, minimo, maximo) {
+    let valor = Number(input.value);
     input.value = Math.min(Math.max(valor, minimo), maximo);
 }
 
-document.getElementById("magnitude_start").addEventListener("input", function () {
-    limitarRango(this, parseFloat(this.min), parseFloat(this.max));
+function limitarRangoInt(input, minimo, maximo) {
+    let valor = Number(input.value);
+    input.value = Math.min(Math.max(valor, minimo), maximo);
+}
+
+document.getElementById("magnitude_start").addEventListener("blur", function () {
+    limitarRangoFloat(this, parseFloat(this.min), parseFloat(this.max));
 });
 
-document.getElementById("magnitude_end").addEventListener("input", function () {
-    limitarRango(this, parseFloat(this.min), parseFloat(this.max));
+document.getElementById("magnitude_end").addEventListener("blur", function () {
+    limitarRangoFloat(this, parseFloat(this.min), parseFloat(this.max));
 });
 
 
-document.getElementById("depth_start").addEventListener("input", function () {
-    limitarRango(this, parseInt(this.min), parseInt(this.max));
+document.getElementById("depth_start").addEventListener("blur", function () {
+    limitarRangoInt(this, parseInt(this.min), parseInt(this.max));
 });
 
-document.getElementById("depth_end").addEventListener("input", function () {
-    limitarRango(this, parseInt(this.min), parseInt(this.max));
+document.getElementById("depth_end").addEventListener("blur", function () {
+    limitarRangoInt(this, parseInt(this.min), parseInt(this.max));
 });
