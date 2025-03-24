@@ -7,7 +7,7 @@ body {
     #outline: 2px solid black;
 }
 
-.sismos-container {
+.form-container {
     display: flex;
     align-items: center; /* Alinear verticalmente */
     justify-content: center; /* Centrar en la página */
@@ -33,6 +33,7 @@ input[type="number"] {
     text-align: center;
     font-size: 18px;
     padding: 5px;
+    border: 2px solid #000000;
 }
 
 fieldset {
@@ -41,10 +42,6 @@ fieldset {
     width: max-content;
     text-align: center;
     margin: auto;
-}
-
-legend {
-    font-weight: bold;
 }
 
 .inputs-container {
@@ -58,6 +55,7 @@ legend {
     display: flex;
     flex-direction: column; /* Pone el label encima del input */
     align-items: center; /* Centra el contenido dentro del grupo */
+    #outline: 2px solid black;
 }
 
 input[type="button"] {
@@ -78,4 +76,62 @@ input[type="button"]:hover {
 }
 input[type="button"]:active {
     transform: scale(0.98);
+}
+
+select {
+    width: 120px;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    background-color: white;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#DA_container {
+    display: none;
+}
+
+#Grad_pend_container {
+    display: none;
+}
+
+#magnitude_container {
+    display: none;
+}
+
+#depth_container {
+    display: none;
+}
+
+h1 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: Arial, sans-serif;
+    margin: 10px 0;
+}
+
+.floor-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.floor-parameters-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+label{
+    margin-top: 5px;
 }

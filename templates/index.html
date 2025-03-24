@@ -7,14 +7,21 @@
     <script src="/static/js/index.js" defer></script>
 </head>
 <body>
-    <div class="sismos-container">
+    <div class="form-container">
         <div class="map-container">
             <img src="/static/img/mapamx_basic.png" id="map" alt="Mapa de México">
         </div>
         <div class="parameters-container">
+            <h1>Sismos</h1>
             <fieldset>
-                <legend>Rango de magnitud</legend>
-                <div class="inputs-container">
+                 <div class="input-group">
+                     <label for="magnitude">Magnitud:</label>
+                     <select id="magnitude">
+                         <option>N.E.</option>
+                         <option>Elegir</option>
+                     </select>
+                 </div>
+                <div class="inputs-container" id="magnitude_container">
                     <div class="input-group">
                         <label for="magnitude_start">Inicial:</label>
                         <input type="number" id="magnitude_start" value="0.3" step="0.1" min="0.3" max="8.2">
@@ -26,8 +33,14 @@
                 </div>
             </fieldset>
             <fieldset>
-                <legend>Rango de profundidad(Km):</legend>
-                <div class="inputs-container">
+                <div class="input-group">
+                     <label for="depth">Profundidad(Km):</label>
+                     <select id="depth">
+                         <option>N.E.</option>
+                         <option>Elegir</option>
+                     </select>
+                </div>
+                <div class="inputs-container" id="depth_container">
                     <div class="input-group">
                         <label for="depth_start">Inicial:</label>
                         <input type="number" id="depth_start" value="0" step="1" min="0" max="338">
@@ -40,6 +53,159 @@
             </fieldset>
             <input type="button" value="Actualizar" onclick="updatemap()">
         </div>
+		<div class="floor-form-container">
+			<div class="floor-parameters-wrapper">
+				<div class="parameters-container">
+					<h1>Capacidad del suelo para soportar cargas</h1>
+					<fieldset>
+						<div class="inputs-container">
+							<div class="input-group">
+								<label for="soil_texture">Textura de suelo:</label>
+								<select id="soil_texture">
+									<option>N.E.</option>
+									<option>Opción 1</option>
+									<option>Opción 2</option>
+									<option>Opción 3</option>
+								</select>
+							</div>
+							<div class="input-group">
+								<label for="textural_class">Clase textural:</label>
+								<select id="textural_class">
+									<option>N.E.</option>
+									<option>Opción 1</option>
+									<option>Opción 2</option>
+									<option>Opción 3</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="inputs-container">
+							<div class="input-group">
+								<label for="physical_phase">Fase física:</label>
+								<select id="physical_phase">
+									<option>N.E.</option>
+									<option>Opción 1</option>
+									<option>Opción 2</option>
+									<option>Opción 3</option>
+								</select>
+							</div>
+							<div class="input-group">
+								<label for="chemical_phase">Fase química:</label>
+								<select id="chemical_phase">
+									<option>N.E.</option>
+									<option>Opción 1</option>
+									<option>Opción 2</option>
+									<option>Opción 3</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+                        <div class="input-group">
+                            <label for="DA">Rango de densidad aparente:</label>
+                            <select id="DA">
+							    <option>N.E.</option>
+							    <option>Elegir</option>
+						    </select>
+						</div>
+						<div class="inputs-container" id="DA_container">
+							<div class="input-group">
+								<label for="DA_start">Inicial:</label>
+								<input type="number" id="DA_start" value="0" step="0.01" min="0" max="2.15">
+							</div>
+							<div class="input-group">
+								<label for="DA_end">Final:</label>
+								<input type="number" id="DA_end" value="2.15" step="0.01" min="0" max="2.15">
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="parameters-container">
+					<h1>Riesgos geológicos y ambientales</h1>
+					<fieldset>
+						<div class="inputs-container">
+							<div class="input-group">
+								<label for="topoform">Topoforma:</label>
+								<select id="topoform">
+									<option>N.E.</option>
+									<option>Opción 1</option>
+									<option>Opción 2</option>
+									<option>Opción 3</option>
+								</select>
+							</div>
+							<div class="input-group">
+								<label for="relief">Relieve:</label>
+								<select id="relief">
+									<option>N.E.</option>
+									<option>Opción 1</option>
+									<option>Opción 2</option>
+									<option>Opción 3</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="inputs-container">
+							<div class="input-group">
+								<label for="soil_erosion">Erosión del suelo:</label>
+								<select id="soil_erosion">
+									<option>N.E.</option>
+									<option>Opción 1</option>
+									<option>Opción 2</option>
+									<option>Opción 3</option>
+								</select>
+							</div>
+							<div class="input-group">
+								<label for="outcrop">Afloramiento:</label>
+								<select id="outcrop">
+									<option>N.E.</option>
+									<option>Opción 1</option>
+									<option>Opción 2</option>
+									<option>Opción 3</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="inputs-container">
+							<div class="input-group">
+                                <label for="physiographic_province">Provincia Fisiográfica:</label>
+								<select id="physiographic_province">
+									<option>N.E.</option>
+									<option>Opción 1</option>
+									<option>Opción 2</option>
+									<option>Opción 3</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+                        <div class="input-group">
+                            <label for="Grad_pend">Gradiente de Pendiente:</label>
+                            <select id="Grad_pend">
+							    <option>N.E.</option>
+							    <option>Elegir</option>
+						    </select>
+						</div>
+						<div class="inputs-container" id="Grad_pend_container">
+							<div class="input-group">
+								<label for="Grad_pend_start">Inicial:</label>
+								<input type="number" id="Grad_pend_start" value="0" step="0.01" min="0" max="2.15">
+							</div>
+							<div class="input-group">
+								<label for="Grad_pend_end">Final:</label>
+								<input type="number" id="Grad_pend_end" value="2.15" step="0.01" min="0" max="2.15">
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<div class="button-container">
+				<input type="button" value="Actualizar" onclick="updatemap()">
+			</div>
+		</div>
+
     </div>
 </body>
 </html>
