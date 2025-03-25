@@ -145,3 +145,10 @@ label{
 .bad-option{
     background-color: red;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+    #outline: 2px solid black;
+    padding: 20px;
+}
