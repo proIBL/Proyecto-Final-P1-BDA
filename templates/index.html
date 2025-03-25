@@ -51,7 +51,6 @@
                     </div>
                 </div>
             </fieldset>
-            <input type="button" value="Actualizar" onclick="updatemap()">
         </div>
 		<div class="floor-form-container">
 			<div class="floor-parameters-wrapper">
@@ -63,18 +62,40 @@
 								<label for="soil_texture">Textura de suelo:</label>
 								<select id="soil_texture">
 									<option>N.E.</option>
-									<option>Opción 1</option>
-									<option>Opción 2</option>
-									<option>Opción 3</option>
+                                    <option class="good-option">Franca</option>
+									<option class="good-option">Franco - arenosa</option>
+									<option class="regular-option">Arcillo - arenosa</option>
+                                    <option class="regular-option">Arenosa</option>
+                                    <option class="bad-option">Arcillosa</option>
+                                    <option class="regular-option">Franco - arcillosa</option>
+                                    <option class="regular-option">Franco - arcillo - arenosa</option>
+                                    <option class="bad-option">Arcillo - limosa</option>
+                                    <option class="bad-option">No aplicable</option>
+                                    <option class="bad-option">No disponible</option>
+                                    <option class="regular-option">Franco - limosa</option>
+                                    <option class="bad-option">Limosa</option>
+                                    <option class="good-option">Areno - Francosa</option>
+                                    <option class="regular-option">Franco - arcillo - limosa</option>
 								</select>
 							</div>
 							<div class="input-group">
 								<label for="textural_class">Clase textural:</label>
 								<select id="textural_class">
 									<option>N.E.</option>
-									<option>Opción 1</option>
-									<option>Opción 2</option>
-									<option>Opción 3</option>
+									<option class="good-option">Franco - arenosa</option>
+									<option class="regular-option">Franco - arcillo - arenosa</option>
+									<option class="regular-option">Arenosa</option>
+                                    <option class="regular-option">Franco - arcillosa</option>
+                                    <option class="bad-option">Arcillosa</option>
+                                    <option class="good-option">Franca</option>
+                                    <option class="bad-option">No aplicable</option>
+                                    <option class="regular-option">Arcillo - arenosa</option>
+                                    <option class="good-option">Areno - Francosa</option>
+                                    <option class="regular-option">Franco - limosa</option>
+                                    <option class="regular-option">Franco - arcillo - limosa</option>
+                                    <option class="bad-option">Arcillo - limosa</option>
+                                    <option class="bad-option">Limosa</option>
+                                    <option class="bad-option">Arcillosa pesada</option>
 								</select>
 							</div>
 						</div>
@@ -85,18 +106,31 @@
 								<label for="physical_phase">Fase física:</label>
 								<select id="physical_phase">
 									<option>N.E.</option>
-									<option>Opción 1</option>
-									<option>Opción 2</option>
-									<option>Opción 3</option>
+									<option class="bad-option">Ninguno</option>
+									<option class="bad-option">Epiléptico</option>
+									<option class="bad-option">Endoléptico</option>
+                                    <option class="regular-option">Lítico</option>
+                                    <option class="regular-option">Epipetrocálcico</option>
+                                    <option class="regular-option">Endopetrocálcico</option>
+                                    <option class="good-option">Endopetrodúrico</option>
+                                    <option class="good-option">Epipetrodúrico</option>
+                                    <option class="bad-option">Endopetrogípsico</option>
+                                    <option class="bad-option">Epipetrogípsico</option>
+                                    <option class="bad-option">No aplicable</option>
 								</select>
 							</div>
 							<div class="input-group">
 								<label for="chemical_phase">Fase química:</label>
 								<select id="chemical_phase">
 									<option>N.E.</option>
-									<option>Opción 1</option>
-									<option>Opción 2</option>
-									<option>Opción 3</option>
+									<option class="regular-option">Protosódica</option>
+									<option class="bad-option">Ninguno</option>
+									<option class="bad-option">Sódica</option>
+                                    <option class="good-option">Protosálica</option>
+                                    <option class="good-option">Sálica</option>
+                                    <option class="bad-option">No aplicable</option>
+                                    <option class="good-option">Hipersálica</option>
+                                    <option class="bad-option">No disponible</option>
 								</select>
 							</div>
 						</div>
@@ -129,18 +163,32 @@
 								<label for="topoform">Topoforma:</label>
 								<select id="topoform">
 									<option>N.E.</option>
-									<option>Opción 1</option>
-									<option>Opción 2</option>
-									<option>Opción 3</option>
+									<option class="good-option">Llanura</option>
+									<option class="regular-option">Lomerío</option>
+									<option class="good-option">Meseta</option>
+                                    <option class="bad-option">Sierra</option>
+                                    <option class="regular-option">Bajada</option>
+                                    <option class="good-option">Valle</option>
+                                    <option class="bad-option">Campo de dunas</option>
+                                    <option class="bad-option">Cañón</option>
+                                    <option class="regular-option">Depresión</option>
+                                    <option class="bad-option">Escudo volcanes</option>
+                                    <option class="bad-option">Playa/ Barra</option>
+                                    <option class="bad-option">Arrecife</option>
+                                    <option class="bad-option">Vaso lacustre</option>
+                                    <option class="bad-option">Domo volcánico</option>
 								</select>
 							</div>
 							<div class="input-group">
 								<label for="relief">Relieve:</label>
 								<select id="relief">
 									<option>N.E.</option>
-									<option>Opción 1</option>
-									<option>Opción 2</option>
-									<option>Opción 3</option>
+									<option class="good-option">Casi plano</option>
+									<option class="regular-option">Levemente ondulado</option>
+									<option class="good-option">Plano</option>
+                                    <option class="bad-option">Fuertemente ondulado</option>
+                                    <option class="regular-option">Ondulado</option>
+                                    <option class="bad-option">Abrupto</option>
 								</select>
 							</div>
 						</div>
@@ -151,18 +199,24 @@
 								<label for="soil_erosion">Erosión del suelo:</label>
 								<select id="soil_erosion">
 									<option>N.E.</option>
-									<option>Opción 1</option>
-									<option>Opción 2</option>
-									<option>Opción 3</option>
+									<option class="good-option">Leve</option>
+									<option class="regular-option">Moderado</option>
+									<option class="regular-option">Fuerte</option>
+                                    <option class="bad-option">No aplicable</option>
+                                    <option class="bad-option">Extremo</option>
+                                    <option class="bad-option">No disponible</option>
 								</select>
 							</div>
 							<div class="input-group">
 								<label for="outcrop">Afloramiento:</label>
 								<select id="outcrop">
 									<option>N.E.</option>
-									<option>Opción 1</option>
-									<option>Opción 2</option>
-									<option>Opción 3</option>
+									<option class="good-option">Ninguno</option>
+									<option class="regular-option">Abundantes</option>
+									<option class="regular-option">Escasos</option>
+                                    <option class="regular-option">Moderados</option>
+                                    <option class="bad-option">Excesivamente rocoso</option>
+                                    <option class="bad-option">No disponible</option>
 								</select>
 							</div>
 						</div>
@@ -173,9 +227,21 @@
                                 <label for="physiographic_province">Provincia Fisiográfica:</label>
 								<select id="physiographic_province">
 									<option>N.E.</option>
-									<option>Opción 1</option>
-									<option>Opción 2</option>
-									<option>Opción 3</option>
+									<option>Península de Baja California</option>
+									<option>Llanura Sonorense</option>
+									<option>Sierra Madre del Sur</option>
+                                    <option>Península de Yucatán</option>
+                                    <option>Llanura Costera del Golfo Sur</option>
+                                    <option>Sierras de Chiapas y Guatemala</option>
+                                    <option>Cordillera Centroamericana</option>
+                                    <option>Eje Neovolcánico</option>
+                                    <option>Sierra Madre Oriental</option>
+                                    <option>Llanura Costera del Golfo Norte</option>
+                                    <option>Sierra Madre Occidental</option>
+                                    <option>Llanura Costera del Pacífico</option>
+                                    <option>Mesa del Centro</option>
+                                    <option>Grandes Llanuras de Norteamérica</option>
+                                    <option>Sierras y Llanuras del Norte</option>
 								</select>
 							</div>
 						</div>
@@ -191,11 +257,11 @@
 						<div class="inputs-container" id="Grad_pend_container">
 							<div class="input-group">
 								<label for="Grad_pend_start">Inicial:</label>
-								<input type="number" id="Grad_pend_start" value="0" step="0.01" min="0" max="2.15">
+								<input type="number" id="Grad_pend_start" value="0" step="1" min="0" max="100">
 							</div>
 							<div class="input-group">
 								<label for="Grad_pend_end">Final:</label>
-								<input type="number" id="Grad_pend_end" value="2.15" step="0.01" min="0" max="2.15">
+								<input type="number" id="Grad_pend_end" value="100" step="1" min="0" max="100">
 							</div>
 						</div>
 					</fieldset>
@@ -207,5 +273,6 @@
 		</div>
 
     </div>
+
 </body>
 </html>
