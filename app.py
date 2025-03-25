@@ -12,6 +12,7 @@ edaphology = gpd.read_parquet("data/edafología.parquet")
 edaphology['Text_campo'] = edaphology['Text_campo'].replace({'Areno - francosa': 'Areno - Francosa'})
 edaphology['Clase_text'] = edaphology['Clase_text'].replace({'Areno - francosa': 'Areno - Francosa'})
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
