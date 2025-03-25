@@ -30,28 +30,22 @@ def update_image():
     filters_edaphology = {k: v for k, v in filters.items() if v is not False and k !="Magnitud" and k != "Profundidad"}
 
     if len(filters_earthquakes) != 0:
-        earthquake_conditions = []
+        earthquakes_partial = earthquakes
         for k, v in filters_earthquakes.items():
             min_val, max_val = v
-            earthquake_conditions.append(f"{min_val} < {k} < {max_val}")
-        earthquakes_conditions_query = " & ".join(earthquake_conditions)
-        earthquakes_partial = earthquakes.query(earthquakes_conditions_query)
+            earthquakes_partial = earthquakes_partial.query(f"{min_val} < {k} < {max_val}")
         if not earthquakes_partial.empty:
             earthquakes_partial.plot(ax=ax, color="red", markersize=10)
 
     if len(filters_edaphology) != 0:
-        edaphology_conditions = []
+        edaphology_partial = edaphology
         for k, v in filters_edaphology.items():
-            print(v)
             if isinstance(v, list):  # Rango
                 min_val, max_val = v
-                edaphology_conditions.append(f"{min_val} < {k} < {max_val}")
+                edaphology_partial = edaphology_partial.query(f"{min_val} < {k} < {max_val}")
             else:
-                edaphology_conditions.append(f"{k} == @v")
-        print(edaphology_conditions)
-        edaphology_conditions_query = " & ".join(edaphology_conditions)
-        print(edaphology_conditions_query)
-        edaphology_partial = edaphology.query(edaphology_conditions_query)
+                edaphology_partial = edaphology_partial.query(f"{k} == @v")
+
         if not edaphology_partial.empty:
             edaphology_partial.plot(ax=ax, color="yellow", markersize=10)
 
